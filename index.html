@@ -1,64 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <title>Hip-Hop Hangman</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page Title</title>
+  <!-- reset css -->
+  <link rel="stylesheet" href="assets/css/reset.css"/>
+  <!-- link css -->
+  <link rel="stylesheet"  href="assets/css/style.css" />
 </head>
 <body>
-    <h1>Hangman</h1>
-
-    <script>
-        // secret words 
-        var words = [ 
-            "pizza",
-            "train",
-            "javascript",
-            "awesome"
-        ];
-        // pick random words from the words array
-        var word = words[Math.floor(Math.random() * words.length)];
-        // creeate a loop that will allow "_" to match the asnwer array
-        var answerArray = [];
-        for (var i = 0; i < word.length; i++) {
-            answerArray[i] = "_";
-        }
-        var remainingLetters = word.length;
-        // using "while loop" will keep looping as long as "remainingLetters > 0" remains true.
-        // gamecode goes here
-        while (remainingLetters > 0) {
-             // show the player their progress
-            alert(answerArray.join(""));
-             // take inpput from the player
-                // saves players guess to varibale guess
-            var guess = prompt("Guess a letter, or click to stop playing.");
-                // if player selects cancel button the guess becomes null 
-            if (guess === null) {
-                break;
-            }
-                // ensures that the guesses are exectly one letter each
-            else if (guess.length !== 1) {
-            alert("Please enter single letter.");
-            }
-            // update game
-            else {
-                // update answerArray and remainingLetters for every correct guess
-                    // create a for loop with a new looping variable called j, which runs from 0 up to word.length
-                for (var j = 0; j < word.length; j++) {
-                    // check wheter the current letter matches the guessed. answersArray[j] - guess updates answer array with the current guess.
-                    if (word[j] === guess) {
-                        answerArray[j]= guess;
-                        remainingLetters--;
-                    }
-                }
-            }
-        }
-            alert(answerArray.join(" "));
-            alert("Good Job! The answer was " + word);
-            
-    </script>
+  </div>
+  <div class="container">
+      <header>
+        <h1>Hangman Game</h1>
+        <br>
+        <h3>Gamer edition</h3>
+      </header>
+      <br>
+      <div class="underscore">_ _ _ _</div>
+      <br>
+      <div class="rightGuess">Right Guess</div>
+      <br>
+      <div class="remainingGuess"> Remaining Guess: 10</div>
 </body>
+<script src="assets/javascript/game.js"></script>
 </html>
