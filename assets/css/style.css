@@ -7,29 +7,35 @@ header {
     width: 80%;
 }
 
-.underscore {
-    border: 3px solid black;
-    font-size : 75px;
+.letter {
+    display: inline-block;
+    list-style: none;
+    width: 20px;
+    margin: 0 5px;
+    border-bottom: 1px solid black;
     text-align: center;
-    margin: 50px auto;
-    height: 150px;
-    width: 80%;
+    color: white;
 }
-
-.rightGuess {
-    border: 3px solid black;
-    font-size : 20px;
-    text-align: center;
-    margin: 50px auto;
-    height: 150px;
-    width: 80%;
+.current-word {
+    list-style: none;
 }
-
-.remainingGuess  {
-    border: 3px solid black;
-    font-size : 20px;
-    text-align: center;
-    margin: 50px auto;
-    height: 150px;
-    width: 80%;
+.output {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+.correct {
+    background-color: green;
+    transition: all 1s ease;
+}
+.error {
+    color: red;
+    opacity: 1;
+}
+.warning {
+    color: orange;
+    opacity: 1;
+}
+.win {
+    color: green;
+    opacity: 1;
 }
