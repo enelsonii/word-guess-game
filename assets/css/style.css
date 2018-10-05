@@ -1,41 +1,62 @@
-header {
-    border: 3px solid black;
-    font-size : 20px;
+body {
+    background:url("") no-repeat;
     text-align: center;
-    margin: 50px auto;
-    height: 300px;
-    width: 80%;
-}
+  }
+  #startBtn {
+      top: 400px;
+      left: 250px;
+      width: 200px;
+      height: 50px;
+  }
 
-.letter {
+  #user-word {
+    margin: 0;
+    display: block;
+    padding: 0;
+    display: block;
+  }
+  #my-word li {
+    position: relative;
+    list-style: none;
+    margin: 0;
     display: inline-block;
-    list-style: none;
-    width: 20px;
-    margin: 0 5px;
-    border-bottom: 1px solid black;
-    text-align: center;
-    color: white;
-}
-.current-word {
-    list-style: none;
-}
-.output {
-    opacity: 0;
-    transition: opacity 1s ease;
-}
-.correct {
-    background-color: green;
-    transition: all 1s ease;
-}
-.error {
-    color: red;
-    opacity: 1;
-}
-.warning {
+    padding: 0 10px;
+    font-size: 1.6em;
+  }
+
+  .letter {
+    width: 30px;
+    height: 30px;
+    border-style: solid;
+    padding: 2px;
+    float: left;
+    margin: 2px;
+  }
+
+  .letter-button-color {
+    color: darkcyan;
+  }
+
+  .guessedLetter-color {
     color: orange;
-    opacity: 1;
-}
-.win {
-    color: green;
-    opacity: 1;
-}
+  }
+
+  #display {
+    margin-top: 78px;
+    height: 500px;
+    width: 220px;
+    margin-left: 60px;
+  }
+
+  #buttons {
+    padding-top: 60px;
+  }
+
+  #reset {
+    margin-left: 20px;
+    font-size: 25px;
+    color: black;
+    background: green;
+    border-style: solid;
+    width: 100px;
+  }

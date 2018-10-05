@@ -1,32 +1,45 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Page Title</title>
   <!-- reset css -->
-  <link rel="stylesheet" href="assets/css/reset.css"/>
+  <link rel="stylesheet" href="assets/css/reset.css" />
   <!-- link css -->
-  <link rel="stylesheet"  href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
+
 <body>
   </div>
-  <div class="container">
-      <header>
-        <h1>Hangman Game</h1>
-        <br>
-        <h3>Super Smash Bros. edition</h3>
-      </header>
-      <br>
-      <form id="hangman">
-          <input type="text" maxlength="1" minlength="1" name="letter" id="letter" placeholder="Guess a letter" />
-          <input id="guess" name="guess" type="submit" value="Guess" />
-          <button id="restart" name="restart" type="button">Restart</button>
-      </form>
-      <ul id="letters"></ul>
-      <p id="man"></p>
-      <p id="output" class="output"></p>
+
+  <!-- Jumbotron with Title -->
+  <div class="jumbotron">
+    <h1 class="text-center">
+      <strong>Super Smash Bros.</strong>
+    </h1>
+    <h2>Hangeman!</h2>
+    <button type="button" id="startBtn" onclick="inialize()">START</button>
+    <hr>
+  </div>
+  <p id="userLives">You have 10 lives</p>
+  <div id="hold">
+    <ul id="my-word">
+      <li class="guess">_</li>
+      <li class="guess">_</li>
+      <li class="guess">_</li>
+      <li class="guess">_</li>
+      <li class="guess">_</li>
+      <li class="guess">_</li>
+    </ul>
+  </div>
+  <div id="display"></div>
+  <div id="buttons"></div>
+  <button id="reset">reset</button>
 </body>
 <script src="assets/javascript/game.js"></script>
+
 </html>
