@@ -1,12 +1,5 @@
 body {
-    background:url("") no-repeat;
-    text-align: center;
-  }
-  #startBtn {
-      top: 400px;
-      left: 250px;
-      width: 200px;
-      height: 50px;
+    background: src no-repeat;
   }
 
   #user-word {
@@ -14,14 +7,6 @@ body {
     display: block;
     padding: 0;
     display: block;
-  }
-  #my-word li {
-    position: relative;
-    list-style: none;
-    margin: 0;
-    display: inline-block;
-    padding: 0 10px;
-    font-size: 1.6em;
   }
 
   .letter {
