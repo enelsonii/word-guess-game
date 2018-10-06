@@ -6,7 +6,9 @@ var words = [
   "pikachu",
   "kirby",
   "fox",
-  "lucas"
+  "lucas",
+  "sonic",
+  "ike"
 ];
 var wins = 0;
 var loss = 0;
@@ -36,7 +38,7 @@ function startGame() {
   document.getElementById("guess-left").textContent = guessesLeft;
 
   // 
-  function winLose() {
+// function winLose() {
     if (winCounter === word.length) {
       alert("You win!");
       
@@ -67,6 +69,6 @@ function startGame() {
       }
     }
   }
-}
+
 
 // 
