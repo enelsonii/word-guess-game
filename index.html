@@ -12,17 +12,19 @@
   <link rel="stylesheet" href="assets/css/style.css" />
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
+
 <body>
   <!-- Game headline -->
   <div class="col-lg-12">
     <div class="container">
       <div class="panel-heading">
-        <h3 class= "panel-title">
+        <h3 class="panel-title">
           <strong>Super Smash Bros.</strong>
         </h3>
         <h3>
           Hangman!
         </h3>
+        <img src="assets/images/Background.png">
       </div>
       <!-- blank place for user to in -->
       <div class="panel-body">
@@ -31,17 +33,19 @@
 
       </div>
     </div>
+    <button type="button" onclick="document.getElementById('startBtn').innerHTML = startGame()">
+      Start Game</button>
     <!-- hodling the list of wrong guesses from users -->
     <div class="panel panel-default">
       <div class="panel-body">
         <!-- showing the wrong guesses -->
-        <strong>Wrong Guesses: </strong><span id= "wrong-guesses"></span>
+        <strong>Wrong Guesses: </strong><span id="wrong-guesses"></span>
       </div>
     </div>
     <!-- Holding the number of wrong guesses -->
     <div class="panel panel-default">
       <div class="panel-body">
-        <strong>Turns remaining: </strong> <span id= "guess-left">10</span>
+        <strong>Turns remaining: </strong> <span id="guess-left">10</span>
       </div>
     </div>
     <!-- Holding the number of wins  -->
@@ -55,7 +59,7 @@
     <div class="panel panel-default">
       <div class="panel-body">
         <!-- showing the number of losses -->
-        <strong>Losses: </strong> <span id= "loss-counter">0</span>
+        <strong>Losses: </strong> <span id="loss-counter">0</span>
       </div>
     </div>
   </div>
