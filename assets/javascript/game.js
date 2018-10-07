@@ -17,7 +17,7 @@ document.getElementById("wins").innerHTML = wins;
 // secret words
 var wordList = [
   "mario",
-  "lugi",
+  "luigi",
   "mart",
   "ike",
   "fox",
@@ -70,17 +70,21 @@ function checkLetter() {
       if (counter > 0 && letters.join(" ") == word) {
         document.getElementById("wins").innerHTML = wins + 1;
         console.log(wins);
-        confirm("YOU WIN! Play Again?");
-        start();
+        confirm("YOU WIN! Would You Like To Play Again?");
+          wins++;
+          counter = 10;
+          letters= [];
+          wrongLetters = [];
+          start();
       };
 
       //when counter reaches 0 it's Game Over
       if (counter === 0) {
         document.getElementById("losses").innerHTML = losses + 1;
         console.log(losses);
-        confirm("YOU LOOSE... play again?"); {
+        confirm("YOU LOSE! Would You Like to Playe again Play again?"); {
           losses++;
-          counter = 7;
+          counter = 10;
           letters = [];
           wrongLetters = [];
           start();
