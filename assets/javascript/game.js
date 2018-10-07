@@ -37,7 +37,7 @@ function start() {
   for (i = 0; i < word.length; i++) {
     letters[i] = "__";
   }
-
+  // get rid of the comma in the answer section
   document.getElementById("answer").innerHTML = letters.join(" ");
   console.log(word);
 
@@ -73,7 +73,7 @@ function checkLetter() {
         confirm("YOU WIN! Would You Like To Play Again?");
           wins++;
           counter = 10;
-          letters= [];
+          letters= i ;
           wrongLetters = [];
           start();
       };
@@ -85,7 +85,7 @@ function checkLetter() {
         confirm("YOU LOSE! Would You Like to Playe again Play again?"); {
           losses++;
           counter = 10;
-          letters = [];
+          letters = i;
           wrongLetters = [];
           start();
         }
@@ -94,7 +94,5 @@ function checkLetter() {
     }
   }
 }
-
-
 start();
 checkLetter();
