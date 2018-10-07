@@ -1,74 +1,96 @@
-// creating varibles
-var words = [
-  "mario",
-  "link",
-  "samus",
-  "pikachu",
-  "kirby",
-  "fox",
-  "lucas",
-  "sonic",
-  "ike"
-];
-var wins = 0;
-var loss = 0;
-var wrongLetter = [];
-var guessesLeft = 10;
-var underScores = [];
-var userGuesses = [];
+
 var word;
-var winCounter = 0;
+//user guess
+var guess;
+//correctly guessed letters	
+var letters = [];
+//incorrectly guessed letters	
+var wrongLetters = [];
+//counts correct letters
+var counter;
+var losses = 0;
+var wins = 0;
 
-// function 
-// whenever start game is called, a new random word will be selected
-function startGame() {
-  // picks a random word
-  word = words[Math.floor(Math.random() * words.length)];
-  console.log("random word = " + word);
-  for (var i = 0; i < word.length; i++) {
-    underScores.push("_");
-  } 
-  // displaying underscores
-  document.getElementById("word-blanks").textContent = underScores.join(" ");
-  //  reset
-  wrongLetter = [];
-  guessesLeft = 10;
+// display wins and loss
+document.getElementById("losses").innerHTML = losses;
+document.getElementById("wins").innerHTML = wins;
+// secret words
+var wordList = [
+  "mario",
+  "lugi",
+  "mart",
+  "ike",
+  "fox",
+  "falco",
+  "kirby",
+  "pikachu",
+  "sonic",
+  "sonic"
+];
 
-  //HTML
-  document.getElementById("guess-left").textContent = guessesLeft;
 
-  // 
-// function winLose() {
-    if (winCounter === word.length) {
-      alert("You win!");
-      
-    }
-    else if (guessesLeft === 0) {
-      alert("You lose!");
-      
-    }
-    // Player Guesses
-    document.onkeyup = function (event) {
-      userGuesses = event.key;
-      // check if the letter exist inside of the word 
-      if (word.indexOf(userGuesses) > -1) {
-        for (var i = 0; i < word.length; i++) {
-          if (word[i] === userGuesses) {
-            underScores[i] = userGuesses;
-            console.log(underScores);
-            winCounter++;
-            winLose();
-          }
-        }
+//randomly chooses a word from the array and replaces letters with underscores
+function start() {
+  word = wordList[Math.floor(Math.random() * wordList.length)];
+  counter = 10;
+  document.getElementById("counter").innerHTML = counter;
+  for (i = 0; i < word.length; i++) {
+    letters[i] = "__";
+  }
+
+  document.getElementById("answer").innerHTML = letters.join(" ");
+  console.log(word);
+
+}
+
+
+//checks if letter is in the word
+function checkLetter() {
+  document.onkeyup = function (event) {
+    guess = event.key.toLowerCase();
+    var found = false;
+    for (i = 0; i < word.length; i++) {
+      if (guess === word[i]) {
+        letters[i] = guess;
+        document.getElementById("answer").innerHTML = letters.join(" ");
+        found = true;
       }
-      else {
-        wrongLetter.push(userGuesses);
-        guessesLeft--;
-        console.log(wrongLetter);
-        winLose();
+    }
+    //wrong letters put in wrongLetters array and are shown on screen
+    if (found) return;
+    if (wrongLetters.indexOf(guess) < 0) {
+      wrongLetters.push(guess);
+      document.getElementById("wrongGuesses").innerHTML = wrongLetters.join(" ");
+      //every wrong guess -1 from the counter
+      counter--;
+      console.log(counter);
+      document.getElementById("counter").innerHTML = counter;
+      
+      //+1 to the wins if player guesses correrct
+      if (counter > 0 && letters.join(" ") == word) {
+        document.getElementById("wins").innerHTML = wins + 1;
+        console.log(wins);
+        confirm("YOU WIN! Play Again?");
+        start();
+      };
+
+      //when counter reaches 0 it's Game Over
+      if (counter === 0) {
+        document.getElementById("losses").innerHTML = losses + 1;
+        console.log(losses);
+        confirm("YOU LOOSE... play again?"); {
+          losses++;
+          counter = 7;
+          letters = [];
+          wrongLetters = [];
+          start();
+        }
+
       }
     }
   }
+}
 
 
-// 
+start();
+checkLetter();

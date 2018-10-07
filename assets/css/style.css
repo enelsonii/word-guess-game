@@ -1,25 +1,21 @@
 * {
+    box-sizing: border-box;
     text-align: center;
-}
-.container {
-    color: red;
-    padding: 5px;
+    font-family: fantasy;
+    color: white;
     background: black;
 }
-#characters {
-    padding: 20px;
-    width: 50%;
-    height: auto;
+body {
+    font-family: sans-serif;
 }
-button {
-    background-color: red; 
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.container {
+    border-style: double;
+    border-width: 15px;
+    padding: 10px;
 }
